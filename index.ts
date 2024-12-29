@@ -1,5 +1,5 @@
-import app from './src/app';
+import bootstrap from './src/app';
 
 (() => {
-  app();
+  bootstrap();
 })();
