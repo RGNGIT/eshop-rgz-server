@@ -3,6 +3,7 @@ import { apiPort } from './config';
 import defineRouter from './routes';
 import cors from "cors";
 import bodyParser from "body-parser";
+import initializeSequelizeInstanse from './sequelize';
 
 const app = express();
 const router = express.Router();
@@ -19,6 +20,7 @@ export default function startServer() {
   app.use(cors(corsOpt));
   app.use('/api', router);
   defineRouter(router);
+  initializeSequelizeInstanse();
   
   app.listen(apiPort, () => { console.log(`Server started at ${apiPort}`); });
 }
