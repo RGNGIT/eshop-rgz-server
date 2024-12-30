@@ -20,7 +20,7 @@ export default () => {
   app.use(cors(corsOpt));
   app.use('/api', router);
   defineRouter(router);
-  // initializeSequelizeInstanse();
+  initializeSequelizeInstanse();
 
   app.listen(apiPort, () => { console.log(`Server started at ${apiPort}`); });
 }
