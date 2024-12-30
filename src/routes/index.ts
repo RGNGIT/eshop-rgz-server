@@ -1,5 +1,5 @@
-import ItemsRouter from './users-router';
+import UsersRouter from './users-router';
 
 export default function defineRouter(router) {
-  router.use(ItemsRouter);
+  router.use(UsersRouter);
 }
