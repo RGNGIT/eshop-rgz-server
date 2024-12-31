@@ -3,6 +3,14 @@ import { Address } from './address-model';
 import { Document } from './document-model';
 import { Registration } from './registration-model';
 
+enum Role {
+  'admin',
+  'audit',
+  'user'
+}
+
+const roles: string[] = Object.keys(Role).filter(key => isNaN(Number(key)));
+
 @Table
 export class User extends Model {
   @Column({ type: DataType.INTEGER, unique: true, autoIncrement: true, primaryKey: true })
@@ -39,8 +47,12 @@ export class User extends Model {
   addressess: Address[];
 
   @HasMany(() => Document)
-  documents: Document[];
+  documents: Document[];AS
 
   @HasMany(() => Registration)
   registrations: Registration[];
+
+  @Column({type: DataType.ENUM(...roles)})
+  role: Role;
 }
+ 
