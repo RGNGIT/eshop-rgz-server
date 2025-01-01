@@ -2,7 +2,6 @@ import { Request, Response } from "express";
 import dictionaryService from "../services/dictionary-service";
 
 class DictionaryController {
-  // Геттеры
   async getAllColors(req: Request, res: Response) {
     var colors = await dictionaryService.getAllColors();
     res.json(colors);
@@ -32,7 +31,7 @@ class DictionaryController {
     var streetTypes = await dictionaryService.getAllStreetTypes();
     res.json(streetTypes);
   }
-  // Создать
+
   async createColor(req: Request, res: Response) {
     var color = await dictionaryService.createColor(req.body);
     res.json(color);

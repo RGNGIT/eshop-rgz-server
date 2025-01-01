@@ -20,6 +20,12 @@ export class User extends Model {
   name: string;
 
   @Column({ type: DataType.STRING })
+  login: string;
+
+  @Column({ type: DataType.STRING })
+  password: string;
+
+  @Column({ type: DataType.STRING })
   last_name: string;
 
   @Column({ type: DataType.STRING })
@@ -47,7 +53,7 @@ export class User extends Model {
   addressess: Address[];
 
   @HasMany(() => Document)
-  documents: Document[];AS
+  documents: Document[];
 
   @HasMany(() => Registration)
   registrations: Registration[];

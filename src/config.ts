@@ -9,7 +9,8 @@ const {
   SQ_PORT,
   SQ_USERNAME,
   SQ_PASSWORD,
-  SQ_DB
+  SQ_DB,
+  JWT_SECRET
 } = process.env;
 
 export const sequelizeConfig = {
@@ -20,5 +21,7 @@ export const sequelizeConfig = {
   password: SQ_PASSWORD,
   database: SQ_DB
 }
+
+export const jwtSecret = JWT_SECRET;
 
 export const apiPort = API_PORT;
