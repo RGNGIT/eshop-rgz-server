@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import UserService from '../services/user-service';
 import { User } from "src/models";
-import { createToken } from "../utils";
+import { createToken, decodeToken } from "../utils";
 
 class UserController {
   async register(req: Request, res: Response) {
@@ -39,6 +39,23 @@ class UserController {
   async getAll(req: Request, res: Response) {
     const allUsers = await UserService.getAllUsers();
     res.json(allUsers);
+  }
+
+  async getCurrentUserInfo(req: Request, res: Response) {
+    const token = req.body.token;
+    if (!token) {
+      res.status(404).send("Get current info with token failed. No valid token.");
+      return;
+    }
+
+    const decrypted = decodeToken(token);
+    if (!decrypted) {
+      res.status(404).send("Token decoding failed.");
+      return;
+    }
+
+    var currentUserInfo = await UserService.getUserById(decrypted.id);
+    res.json(currentUserInfo);
   }
 }
 

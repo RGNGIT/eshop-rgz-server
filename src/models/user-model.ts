@@ -37,6 +37,9 @@ export class User extends Model {
   @Column({ type: DataType.STRING })
   passport_serial: string;
 
+  @Column({ type: DataType.TEXT })
+  avatar: string;
+
   @Column({ type: DataType.STRING })
   passport_number: string;
 
