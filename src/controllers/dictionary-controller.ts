@@ -61,6 +61,23 @@ class DictionaryController {
     var streetType = await dictionaryService.createStreetType(req.body);
     res.json(streetType);
   }
+
+  async getCarouselData(req: Request, res: Response) {
+    res.json([
+      {
+        "name": "Супер компания по регистрации",
+        "image": "images/1.jpg"
+      },
+      {
+        "name": "Регистрирует на зашибись",
+        "image": "images/2.jpg"
+      },
+      {
+        "name": "Посмотри и убедись",
+        "image": "images/3.jpg"
+      }
+    ]);
+  }
 }
 
 export default new DictionaryController();

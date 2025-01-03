@@ -15,5 +15,6 @@ router.post('/dictionaries/countries/create', DictionaryController.createCountry
 router.post('/dictionaries/vehicle-types/create', DictionaryController.createVehicleType);
 router.post('/dictionaries/locality-types/create', DictionaryController.createLocalityType);
 router.post('/dictionaries/street-types/create', DictionaryController.createStreetType);
+router.get('/dictionaries/carousel', DictionaryController.getCarouselData);
 
 export default router;

@@ -15,7 +15,7 @@ class UserController {
 
     newUser = await UserService.createUser(user);
     const token = createToken({ id: newUser.id });
-    res.json({ token, fullName: `${newUser.last_name} ${newUser.name} ${newUser.middle_name}`, login: newUser.login });
+    res.json({ token, fullName: `${newUser.last_name} ${newUser.name} ${newUser.middle_name}`, login: newUser.login, role: newUser.role });
   }
 
   async login(req: Request, res: Response) {
@@ -29,7 +29,7 @@ class UserController {
 
     if (user.password == foundYou.password) {
       const token = createToken({ id: foundYou.id });
-      res.json({ token, fullName: `${foundYou.last_name} ${foundYou.name} ${foundYou.middle_name}`, login: foundYou.login });
+      res.json({ token, fullName: `${foundYou.last_name} ${foundYou.name} ${foundYou.middle_name}`, login: foundYou.login, role: foundYou.role });
       return;
     }
 
