@@ -1,12 +1,12 @@
-import { Registration } from "../models";
+import { Registration, User, Vehicle, VehicleMark, VehicleModel } from "../models";
 
 class RegistrationService {
-  async createRegictration() {
-    
+  async createRegistration() {
+
   }
 
   async getAllRegistrations() {
-    return Registration.findAll();
+    return Registration.findAll({ include: [{ model: Vehicle, include: [{ model: VehicleModel, include: [{ model: VehicleMark }] }] }, { model: User }] });
   }
 }
 
