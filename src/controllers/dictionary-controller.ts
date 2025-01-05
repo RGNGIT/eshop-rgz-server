@@ -7,8 +7,18 @@ class DictionaryController {
     res.json(colors);
   }
 
+  async deleteColor(req: Request, res: Response) {
+    var colors = await dictionaryService.deleteColorById(req.body.id);
+    res.json(colors);
+  }
+
   async getAllCarcasses(req: Request, res: Response) {
     var carcasses = await dictionaryService.getAllCarcasses();
+    res.json(carcasses);
+  }
+
+  async deleteCarcass(req: Request, res: Response) {
+    var carcasses = await dictionaryService.deleteCarcassById(req.body.id);
     res.json(carcasses);
   }
 
@@ -17,8 +27,18 @@ class DictionaryController {
     res.json(countries);
   }
 
+  async deleteCountry(req: Request, res: Response) {
+    var countries = await dictionaryService.deleteCountryById(req.body.id);
+    res.json(countries);
+  }
+
   async getAllVehicleTypes(req: Request, res: Response) {
     var vehicleTypes = await dictionaryService.getAllVehicleTypes();
+    res.json(vehicleTypes);
+  }
+
+  async deleteVehicleType(req: Request, res: Response) {
+    var vehicleTypes = await dictionaryService.deleteVehicleById(req.body.id);
     res.json(vehicleTypes);
   }
 
@@ -27,8 +47,18 @@ class DictionaryController {
     res.json(localityTypes);
   }
 
+  async deleteLocalityType(req: Request, res: Response) {
+    var localityTypes = await dictionaryService.deleteLocalityTypeById(req.body.id);
+    res.json(localityTypes);
+  }
+
   async getAllStreetTypes(req: Request, res: Response) {
     var streetTypes = await dictionaryService.getAllStreetTypes();
+    res.json(streetTypes);
+  }
+
+  async deleteStreetType(req: Request, res: Response) {
+    var streetTypes = await dictionaryService.deleteStreetTypeById(req.body.id);
     res.json(streetTypes);
   }
 
