@@ -1,8 +1,8 @@
 import { Registration, User, Vehicle, VehicleMark, VehicleModel } from "../models";
 
 class RegistrationService {
-  async createRegistration() {
-
+  async createRegistration(registration) {
+    return Registration.create(registration);
   }
 
   async getAllRegistrations() {
@@ -11,6 +11,10 @@ class RegistrationService {
 
   async deleteRegistrationById(id) {
     return Registration.destroy({ where: { id: id } });
+  }
+
+  async editRegistration(id, data) {
+    return Registration.update(data, { where: { id: id } });
   }
 }
 

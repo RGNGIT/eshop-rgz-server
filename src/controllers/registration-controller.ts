@@ -13,7 +13,13 @@ class RegistrationController {
   }
 
   async createRegistration(req: Request, res: Response) {
+    const registration = await ResistrationService.createRegistration(req.body.data);
+    res.json(registration);
+  }
 
+  async editRegistration(req: Request, res: Response) {
+    const registration = await ResistrationService.editRegistration(req.body.id, req.body.data);
+    res.json(registration);
   }
 }
 

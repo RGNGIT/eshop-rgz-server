@@ -18,7 +18,7 @@ class VehicleService {
   }
 
   async getAllVehicles() {
-    return Vehicle.findAll({ include: [{ model: Color }, { model: Carcas }, { model: VehicleModel }, { model: VehicleType }] });
+    return Vehicle.findAll({ include: [{ model: Color }, { model: Carcas }, { model: VehicleModel, include: [{ model: VehicleMark }] }, { model: VehicleType }] });
   }
 
   async deleteVehicleById(id) {
