@@ -43,7 +43,7 @@ class DictionaryController {
   }
 
   async editCountry(req: Request, res: Response) {
-    var countries = await dictionaryService.editColorById(req.body.id, req.body.data);
+    var countries = await dictionaryService.editCountryById(req.body.id, req.body.data);
     res.json(countries);
   }
 
@@ -93,32 +93,32 @@ class DictionaryController {
   }
 
   async createColor(req: Request, res: Response) {
-    var color = await dictionaryService.createColor(req.body);
+    var color = await dictionaryService.createColor(req.body.data);
     res.json(color);
   }
 
   async createCarcass(req: Request, res: Response) {
-    var carcas = await dictionaryService.createCarcass(req.body);
+    var carcas = await dictionaryService.createCarcass(req.body.data);
     res.json(carcas);
   }
 
   async createCountry(req: Request, res: Response) {
-    var country = await dictionaryService.createCountry(req.body);
+    var country = await dictionaryService.createCountry(req.body.data);
     res.json(country);
   }
 
   async createVehicleType(req: Request, res: Response) {
-    var vehicleType = await dictionaryService.createVehicleType(req.body);
+    var vehicleType = await dictionaryService.createVehicleType(req.body.data);
     res.json(vehicleType);
   }
 
   async createLocalityType(req: Request, res: Response) {
-    var localityType = await dictionaryService.createLocalityType(req.body);
+    var localityType = await dictionaryService.createLocalityType(req.body.data);
     res.json(localityType);
   }
 
   async createStreetType(req: Request, res: Response) {
-    var streetType = await dictionaryService.createStreetType(req.body);
+    var streetType = await dictionaryService.createStreetType(req.body.data);
     res.json(streetType);
   }
 

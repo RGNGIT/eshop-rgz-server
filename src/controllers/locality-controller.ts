@@ -31,6 +31,16 @@ class LocalityController {
     const addressees = await LocalityService.deleteAddressById(req.body.id);
     res.json(addressees);
   }
+
+  async createAddress(req: Request, res: Response) {
+    const addressees = await LocalityService.createAddressById(req.body.data);
+    res.json(addressees);
+  }
+
+  async editAddress(req: Request, res: Response) {
+    const addressees = await LocalityService.editAddressById(req.body.id, req.body.data);
+    res.json(addressees);
+  }
 }
 
 export default new LocalityController();

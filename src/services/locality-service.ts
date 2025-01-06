@@ -24,6 +24,14 @@ class LocalityService {
   async deleteAddressById(id) {
     return Address.destroy({ where: { id: id } });
   }
+
+  async editAddressById(id, data) {
+    return Address.update(data, { where: { id: id } });
+  }
+
+  async createAddressById(address) {
+    return Address.create(address);
+  }
 }
 
 export default new LocalityService();
