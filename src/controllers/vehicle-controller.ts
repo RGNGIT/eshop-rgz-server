@@ -7,13 +7,28 @@ class VehicleController {
     res.json(marks);
   }
 
+  async deleteMark(req: Request, res: Response) {
+    const marks = await VehicleService.deleteMarkById(req.body.id);
+    res.json(marks);
+  }
+
   async getAllModels(req: Request, res: Response) {
     const vehicleModels = await VehicleService.getAllModels();
     res.json(vehicleModels);
   }
 
+  async deleteModel(req: Request, res: Response) {
+    const vehicleModels = await VehicleService.deleteModelById(req.body.id);
+    res.json(vehicleModels);
+  }
+
   async getAllVehicles(req: Request, res: Response) {
     const vehicles = await VehicleService.getAllVehicles();
+    res.json(vehicles);
+  }
+
+  async deleteVehicle(req: Request, res: Response) {
+    const vehicles = await VehicleService.deleteVehicleById(req.body.id);
     res.json(vehicles);
   }
 }

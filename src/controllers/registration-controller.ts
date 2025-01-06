@@ -7,6 +7,11 @@ class RegistrationController {
     res.json(registrations);
   }
 
+  async deleteRegistration(req: Request, res: Response) {
+    const registrations = await ResistrationService.deleteRegistrationById(req.body.id);
+    res.json(registrations);
+  }
+
   async createRegistration(req: Request, res: Response) {
 
   }

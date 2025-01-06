@@ -5,12 +5,24 @@ class VehicleService {
     return VehicleMark.findAll({ include: [{ model: Country }] });
   }
 
+  async deleteMarkById(id) {
+    return VehicleMark.destroy({ where: { id: id } });
+  }
+
   async getAllModels() {
     return VehicleModel.findAll({ include: [{ model: VehicleMark }] });
   }
 
+  async deleteModelById(id) {
+    return VehicleModel.destroy({ where: { id: id } });
+  }
+
   async getAllVehicles() {
     return Vehicle.findAll({ include: [{ model: Color }, { model: Carcas }, { model: VehicleModel }, { model: VehicleType }] });
+  }
+
+  async deleteVehicleById(id) {
+    return Vehicle.destroy({ where: { id: id } });
   }
 }
 
