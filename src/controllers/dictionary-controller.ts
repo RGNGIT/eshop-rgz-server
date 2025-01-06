@@ -12,6 +12,11 @@ class DictionaryController {
     res.json(colors);
   }
 
+  async editColor(req: Request, res: Response) {
+    var colors = await dictionaryService.editColorById(req.body.id, req.body.data);
+    res.json(colors);
+  }
+
   async getAllCarcasses(req: Request, res: Response) {
     var carcasses = await dictionaryService.getAllCarcasses();
     res.json(carcasses);
@@ -19,6 +24,11 @@ class DictionaryController {
 
   async deleteCarcass(req: Request, res: Response) {
     var carcasses = await dictionaryService.deleteCarcassById(req.body.id);
+    res.json(carcasses);
+  }
+
+  async editCarcass(req: Request, res: Response) {
+    var carcasses = await dictionaryService.editCarcassById(req.body.id, req.body.data);
     res.json(carcasses);
   }
 
@@ -32,13 +42,23 @@ class DictionaryController {
     res.json(countries);
   }
 
+  async editCountry(req: Request, res: Response) {
+    var countries = await dictionaryService.editColorById(req.body.id, req.body.data);
+    res.json(countries);
+  }
+
   async getAllVehicleTypes(req: Request, res: Response) {
     var vehicleTypes = await dictionaryService.getAllVehicleTypes();
     res.json(vehicleTypes);
   }
 
   async deleteVehicleType(req: Request, res: Response) {
-    var vehicleTypes = await dictionaryService.deleteVehicleById(req.body.id);
+    var vehicleTypes = await dictionaryService.deleteVehicleTypeById(req.body.id);
+    res.json(vehicleTypes);
+  }
+
+  async editVehicleType(req: Request, res: Response) {
+    var vehicleTypes = await dictionaryService.editVehicleTypeById(req.body.id, req.body.data);
     res.json(vehicleTypes);
   }
 
@@ -52,6 +72,11 @@ class DictionaryController {
     res.json(localityTypes);
   }
 
+  async editLocalityType(req: Request, res: Response) {
+    var localityTypes = await dictionaryService.editLocalityTypeById(req.body.id, req.body.data);
+    res.json(localityTypes);
+  }
+
   async getAllStreetTypes(req: Request, res: Response) {
     var streetTypes = await dictionaryService.getAllStreetTypes();
     res.json(streetTypes);
@@ -59,6 +84,11 @@ class DictionaryController {
 
   async deleteStreetType(req: Request, res: Response) {
     var streetTypes = await dictionaryService.deleteStreetTypeById(req.body.id);
+    res.json(streetTypes);
+  }
+
+  async editStreetType(req: Request, res: Response) {
+    var streetTypes = await dictionaryService.editStreetTypeById(req.body.id, req.body.data);
     res.json(streetTypes);
   }
 

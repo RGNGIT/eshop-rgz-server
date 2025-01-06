@@ -22,5 +22,11 @@ router.post('/dictionaries/vehicle-types/create', DictionaryController.createVeh
 router.post('/dictionaries/locality-types/create', DictionaryController.createLocalityType);
 router.post('/dictionaries/street-types/create', DictionaryController.createStreetType);
 router.get('/dictionaries/carousel', DictionaryController.getCarouselData);
+router.patch('/dictionaries/colors/edit', DictionaryController.editColor);
+router.patch('/dictionaries/carcasses/edit', DictionaryController.editCarcass);
+router.patch('/dictionaries/countries/edit', DictionaryController.editCountry);
+router.patch('/dictionaries/vehicle-types/edit', DictionaryController.editVehicleType);
+router.patch('/dictionaries/locality-types/edit', DictionaryController.editLocalityType);
+router.patch('/dictionaries/street-types/edit', DictionaryController.editStreetType);
 
 export default router;
