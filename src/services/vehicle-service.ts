@@ -24,6 +24,14 @@ class VehicleService {
   async deleteVehicleById(id) {
     return Vehicle.destroy({ where: { id: id } });
   }
+
+  async editVehicleById(id, data) {
+    return Vehicle.update(data, { where: { id: id } });
+  }
+
+  async createVehicle(vehicle) {
+    return Vehicle.create(vehicle);
+  }
 }
 
 export default new VehicleService();

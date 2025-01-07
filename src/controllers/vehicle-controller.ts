@@ -27,6 +27,16 @@ class VehicleController {
     res.json(vehicles);
   }
 
+  async createVehicle(req: Request, res: Response) {
+    const vehicles = await VehicleService.createVehicle(req.body.data);
+    res.json(vehicles);
+  }
+
+  async editVehicle(req: Request, res: Response) {
+    const vehicles = await VehicleService.editVehicleById(req.body.id, req.body.data);
+    res.json(vehicles);
+  }
+
   async deleteVehicle(req: Request, res: Response) {
     const vehicles = await VehicleService.deleteVehicleById(req.body.id);
     res.json(vehicles);
